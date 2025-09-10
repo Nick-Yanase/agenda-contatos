@@ -33,6 +33,10 @@ class UserUseCase{
     return result
   }
 
+  async getAllUsers(){
+    const result = await this.userRepository.getAll()
+    return result
+  }
 }
 
 export {UserUseCase}

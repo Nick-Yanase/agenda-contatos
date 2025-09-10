@@ -17,6 +17,15 @@ async function userRoutes(fastify: FastifyInstance){
       reply.send(error)
     }
   })
+
+  fastify.get("/", async (req, reply) => {
+    const data = await userUseCase.getAllUsers()
+    try {
+      reply.send(data)
+    } catch (error) {
+      reply.send(error)
+    }
+  })
 }
 
 export {userRoutes}

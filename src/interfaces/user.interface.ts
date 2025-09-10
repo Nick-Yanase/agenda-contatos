@@ -20,4 +20,5 @@ export interface UserCreate {
 export interface userRepository {
   create(data: UserCreate): Promise<User>; // uma promise para lidar com funções assíncronas e as informações de retorno são id, name e email <User>
   findByEmail(email: string): Promise<User | null>
+  getAll(): Promise<User[]>
 }

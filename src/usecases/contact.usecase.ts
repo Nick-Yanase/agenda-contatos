@@ -1,4 +1,4 @@
-import type { ContactCreate, ContactRepository } from "../interfaces/contact.interface.js";
+import type { Contact, ContactCreate, ContactRepository } from "../interfaces/contact.interface.js";
 import type { userRepository } from "../interfaces/user.interface.js";
 import { ContactRepositoryPrisma } from "../repositories/contact.repository.js";
 import { UserRepositoryPrisma } from "../repositories/user.repository.js";
@@ -51,6 +51,18 @@ class ContactUseCase{
     const contacts = this.contactRepository.findAllContacts(user.id)
 
     return contacts
+  }
+
+  async updateContact({id, name, email, phone}: Contact){
+    const data = await this.contactRepository.update({id, name, email, phone})
+
+    return data
+  }
+
+  async deleteContact(id: string): Promise<boolean> {
+    const data = this.contactRepository.delete(id)
+
+    return data
   }
 
 }
