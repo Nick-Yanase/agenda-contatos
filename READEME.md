@@ -5,6 +5,8 @@ Esta é a documentação de requisitos para a API de Agenda de Contatos. Esta AP
 ## Funcionalidade
 
 - Os usuários devem poder adicionar novos contatos com informações como nome, número de telefone, endereço de e-mail, etc.
+- Contatos precisam estar cadatrados no banco para serem adicionados por outros usuarios
+- 
 
 
 ## Requisitos Funcionais
@@ -22,7 +24,7 @@ Esta é a documentação de requisitos para a API de Agenda de Contatos. Esta AP
 
 
 ## Regras de Negócios
-
+se podemos cadastrar contato que são usuarios, precisamos apenas no email, o resto das informações teriam que vir automaticas do prprio
 - Os usuários devem ser cadastrados com nome e email
 - O email deve ser uma chave unica
 - Os contatos devem conter pelo menos um nome e uma forma de contato (número de telefone, endereço de e-mail, etc.).
