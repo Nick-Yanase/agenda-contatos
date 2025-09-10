@@ -5,7 +5,7 @@ import { authMiddleware } from "../middleware/auth.middleware.js";
 
 async function contactRoutes(fastify: FastifyInstance){
   const contactUseCase = new ContactUseCase()
-  fastify.addHook("preHandler", authMiddleware) // agora todas as rotas de contact tem esse middleware que verifica se no headers tem um email de verificação
+  fastify.addHook("preHandler", authMiddleware) 
   fastify.post<{Body: ContactCreate}>("/", async (req, reply) => {
     const { name, email, phone } = req.body
     const emailUser = req.headers["email"]

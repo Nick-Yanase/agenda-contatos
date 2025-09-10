@@ -5,13 +5,13 @@ export interface Contact{
   phone: string
   userId?: string
 }
- export interface ContactCreate { // para poder criar o contato
+ export interface ContactCreate {
   name: string
   email: string
   phone: string
   userEmail: string
  }
- export interface contactCreateData { // para salvar os dados cirados
+ export interface contactCreateData {
   name: string
   email: string
   phone: string

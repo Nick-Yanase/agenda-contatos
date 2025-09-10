@@ -12,12 +12,6 @@ class ContactUseCase{
   }
 
   async create({name, phone, email, userEmail}: ContactCreate){
-    // email do usuario logado
-    // buscar o usuario pelo email
-    //se não exisitir, retorna erro
-    //se existir, validar se ele já existe pelo telefone ou email
-    // criar o contato
-
     const user = await this.userRepository.findByEmail(userEmail)
     
     if(!user){
